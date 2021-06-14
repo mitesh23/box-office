@@ -1,20 +1,26 @@
 import React from 'react';
-
 import { Switch, Route } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Home from './Components/pages/Home';
+import Starred from './Components/pages/Starred';
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/">
-        this is home page
-      </Route>
+    <div>
+      <Nav />
 
-      <Route exact path="/starred">
-        this is a starred page
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      <Route path="/another">this is anoher</Route>
-    </Switch>
+        <Route exact path="/starred">
+          <Starred />
+        </Route>
+
+        <Route path="/another">this is anoher</Route>
+      </Switch>
+    </div>
   );
 }
 
